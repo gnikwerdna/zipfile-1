@@ -1,0 +1,70 @@
+﻿@model PagedList<ePro.Models.ProductListing>
+
+
+@using PagedList;
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "All Products";
+}
+
+<h2>All Products</h2>
+
+<p>
+    @Html.ActionLink("Create New", "../products/Create")
+</p>
+@using (Html.BeginForm())
+ {
+     <p>
+         Type in product name: @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+         <input type="submit" value="Find" />
+     </p>
+ }
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Product Name", "Index", new { Sorting_Order = ViewBag.SortingName })
+        </th>
+       <th>
+           Product file
+       </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        @if(item.Files.Any(f=>f.FileType ==ePro.Models.FileType.Avatar))
+        {
+            <td>
+                @Html.ActionLink("Download", "FileDownload", new { fileid =item.Files.First(f=>f.FileType ==ePro.Models.FileType.Avatar).ProductListingID})
+            </td>
+        }
+        else
+        {
+            <td>
+                No files available
+            </td>
+        }
+        
+        <td>
+            @Html.ActionLink("Compliance", "../ProductListings/Index", new { id = item.ProductListingID }) |
+            @Html.ActionLink("Edit", "../products/Edit", new { id=item.ProductListingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductListingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductListingID })
+        </td>
+    </tr>
+}
+
+</table>
+<br/>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, Page_No => Url.Action("Index", new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))
+
+

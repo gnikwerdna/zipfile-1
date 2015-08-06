@@ -1,0 +1,57 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="author" content="Design by FlipDarius - http://flipdarius.googlepages.com/" />
+    <meta name="description" content="A orange sun-inspired webtemplate by FlipDarius - http://flipdarius.googlepages.com/" />
+
+    <title></title>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Styles/likewii.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="wrap">
+        <div id="logo">
+            <h1>Creating and Extracting ZIPs with DotNetZip</h1>
+            <h2>By Scott Mitchell</h2>
+        </div>
+
+        <div class="c"></div>
+
+        <div id="left">
+            <div id="menu">
+                <ul>
+                    <li><a href="Default.aspx">Home</a></li>
+                    <li><a href="CreateZIP.aspx">Create ZIP Demo</a></li>
+                    <li><a href="ExtractZIP.aspx">Extract ZIP Demo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="right">
+            <div class="post">
+                <form id="form1" runat="server">
+                    <div>
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>
+                Demo by <a href="http://www.4guysfromrolla.com/ScottMitchell.shtml">Scott Mitchell</a>.
+                Site designed by <a href="http://flipdarius.googlepages.com/">FlipDarius</a>.
+            </p>
+        </div>
+
+        <div class="c"></div>
+    </div>
+
+
+</body>
+</html>

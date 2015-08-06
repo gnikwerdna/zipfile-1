@@ -1,0 +1,12 @@
+﻿Enable-Migrations -ContextTypeName zip2.Models.ApplicationDbContext -MigrationsDirectory DB\applicationdbcontext 
+Enable-Migrations -ContextTypeName zip2.DB.zipContext -MigrationsDirectory DB\zip 
+
+
+
+
+add-migration -ConfigurationTypeName zip2.DB.applicationdbcontext.Configuration "initialcreate" 
+add-migration -ConfigurationTypeName zip2.DB.zip.Configuration "initialcreate" 
+
+
+update-database -ConfigurationTypeName zip2.DB.applicationdbcontext.Configuration 
+update-database -ConfigurationTypeName zip2.DB.zip.Configuration -verbose 

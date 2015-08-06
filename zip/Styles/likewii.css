@@ -1,0 +1,163 @@
+﻿/*
+Design by FlipDarius (http://flipdarius.googlepages.com)
+Released under a Creative Commons Attribution 2.5 License.
+You're legally free to use this for commercial form, but I'd askyou to send me an email (check my site) if you do this.
+*/
+
+*{
+margin:0;
+padding:0;}
+
+body{
+background: #fff;
+color:#666;
+font-family:  arial, helvetica, sans-serif;
+font-size:16px;
+line-height:1.5em}
+
+a{outline:none;}
+
+#logo{
+width:70%;
+float:right;
+border-left:1px solid #ccc;
+padding:20px;}
+
+#left{
+text-align:right;
+width:21%;
+float:left;
+padding:20px;}
+
+#right{
+width:70%;
+border-top:1px solid #ccc;
+border-left:1px solid #ccc;
+float:right;
+padding:20px;}
+
+#logo h1{
+margin-bottom:.55em;
+font-size:2.2em;}
+
+#logo h2{
+color:#34beed;
+font-size:1.8em;}
+
+#menu ul{
+list-style:none;}
+
+#menu a:link{
+text-decoration:none;
+display:block;
+line-height:1.5em;
+color:#34beed;}
+
+#menu a:visited{
+text-decoration:none;
+display:block;
+line-height:1.5em;
+color:#999;}
+
+#left .active{
+line-height:1em !important;
+margin-bottom:1em;
+font-size:1.4em;
+font-weight:bold;}
+
+#menu a:hover, #menu a:active{
+color:#F09;
+text-decoration:underline;}
+
+#right .post{
+margin-bottom:20px;}
+
+#right h3{
+font-size:1.4em;
+margin-bottom:1em;
+color:#FF0099;}
+
+#right h3 a{
+color:#FF0099;}
+
+.c{
+clear:both;}
+
+#right p{
+line-height:1.5em;
+margin:1em 0 1em 0;}
+
+#right .postline{
+font-style:italic;}
+
+#footer{
+width:70%;
+border-top:1px solid #ccc;
+border-left:1px solid #ccc;
+float:right;
+padding:20px;}
+
+.post a:link, #footer a:link{
+text-decoration:none;
+color:#34beed;}
+
+.post a{
+font-weight:bold;}
+
+.post .postline a{
+font-weight:normal !important;}
+
+.post a:visited, #footer a:visited{
+text-decoration:none;
+color:#999;}
+
+.post a:hover, .post a:active, #footer a:hover, #footer a:active{
+color:#F09;
+text-decoration:underline;}
+
+.post ul {
+    margin-left: 25px;
+}
+
+.input-text{
+padding:3px;
+border:1px solid #ccc;}
+
+.input-text:hover, .input-text:focus,textarea:hover,textarea:focus, select:hover, select:focus{
+border-color:#F09;}
+
+textarea{
+padding:3px;
+border:1px solid #ccc;
+font-family:  arial, helvetica, sans-serif;
+font-size:16px;}
+
+select{
+padding:3px;
+border:1px solid #ccc;}
+
+option{
+padding-right:8px;}
+
+select,.input-button{
+cursor:pointer;}
+
+.input-button, .input-button:focus{
+border: 3px solid #999;
+border-left-color: #ccc;
+border-top-color: #ccc;
+padding: 3px;
+font-weight:bold;
+background:#f5f5f5;
+outline:none;}
+
+.input-button:active{
+outline:none;
+background: #666;
+color:#fff;
+border: 3px solid #ccc;
+border-left-color: #999;
+border-top-color: #999;}
+
+th { background-color: #34beed; color: White; }
+th, td{padding: 3px;margin: 3px;}
