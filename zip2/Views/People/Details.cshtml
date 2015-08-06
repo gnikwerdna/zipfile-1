@@ -17,7 +17,21 @@
         <dd>
             @Html.DisplayFor(model => model.PName)
         </dd>
+        <dd>
+                @foreach (var a in ViewBag.filelist)
+                {
+                    <table>
+                        <tr>
+                            <td>
+                                @Html.ActionLink("Select File", "people/Getfile", new { a.FileId })
+                            </td>
+                        </tr>
+                    </table>
+                }
 
+
+
+        </dd>
     </dl>
 </div>
 <p>

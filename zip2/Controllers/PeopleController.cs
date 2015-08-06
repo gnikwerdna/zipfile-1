@@ -22,6 +22,9 @@ namespace zip2.Controllers
         // GET: People
         public ActionResult Index()
         {
+          
+            
+            
             return View(db.Persons.ToList());
         }
 
@@ -37,6 +40,8 @@ namespace zip2.Controllers
             {
                 return HttpNotFound();
             }
+            var associatedfiles = (from p in db.Files where p.PersonId == id select p);
+            ViewBag.filelist = associatedfiles.ToList();
             return View(person);
         }
 
@@ -87,7 +92,7 @@ namespace zip2.Controllers
 
             using (var conn = new SqlConnection(connect))
             {
-                var qry = "SELECT Content, ContentType, FileName FROM Files WHERE PersonId = @ID";
+                var qry = "SELECT Content, ContentType, FileName FROM Files WHERE FileId = @ID";
                 var cmd = new SqlCommand(qry, conn);
                 cmd.Parameters.AddWithValue("@ID", id);
                 conn.Open();
