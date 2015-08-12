@@ -20,6 +20,8 @@ namespace zip2.Controllers
         private zipContext db = new zipContext();
 
         // GET: People
+        [Audit]
+        [Authorize]
         public ActionResult Index()
         {
           
@@ -29,6 +31,8 @@ namespace zip2.Controllers
         }
 
         // GET: People/Details/5
+        [Audit]
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -44,7 +48,8 @@ namespace zip2.Controllers
             ViewBag.filelist = associatedfiles.ToList();
             return View(person);
         }
-
+        [Audit]
+        [Authorize]
         public ActionResult Uploader()
         {
             return View();
@@ -52,6 +57,8 @@ namespace zip2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Audit]
+        [Authorize]
         public ActionResult Uploader(int? id)
         {
             foreach (string upload in Request.Files)
@@ -84,6 +91,8 @@ namespace zip2.Controllers
 
 
         }
+        [Audit]
+        [Authorize]
         public FileContentResult GetFile(int id)
         {
             SqlDataReader rdr; byte[] fileContent = null;
@@ -110,6 +119,8 @@ namespace zip2.Controllers
 
 
         // GET: People/Create
+        [Audit]
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -120,6 +131,8 @@ namespace zip2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Audit]
+        [Authorize]
         public ActionResult Create([Bind(Include = "PersonId,PName")] Person person)
         {
             if (ModelState.IsValid)
@@ -133,6 +146,8 @@ namespace zip2.Controllers
         }
 
         // GET: People/Edit/5
+        [Audit]
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -152,6 +167,8 @@ namespace zip2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Audit]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "PersonId,PName")] Person person)
         {
             if (ModelState.IsValid)
@@ -164,6 +181,8 @@ namespace zip2.Controllers
         }
 
         // GET: People/Delete/5
+        [Audit]
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -181,6 +200,8 @@ namespace zip2.Controllers
         // POST: People/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Audit]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Person person = db.Persons.Find(id);

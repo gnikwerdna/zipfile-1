@@ -162,6 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuditsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
@@ -179,17 +180,23 @@
     <Compile Include="DB\zip\201508060355196_initialcreate1.Designer.cs">
       <DependentUpon>201508060355196_initialcreate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="DB\zip\201508120158358_initialcreate2.cs" />
+    <Compile Include="DB\zip\201508120158358_initialcreate2.Designer.cs">
+      <DependentUpon>201508120158358_initialcreate2.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\zip\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FileUploadHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Audit.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PostingModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -260,6 +267,11 @@
     <Content Include="Views\People\Edit.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\People\Uploader.cshtml" />
+    <Content Include="Views\Audits\Create.cshtml" />
+    <Content Include="Views\Audits\Delete.cshtml" />
+    <Content Include="Views\Audits\Details.cshtml" />
+    <Content Include="Views\Audits\Edit.cshtml" />
+    <Content Include="Views\Audits\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -278,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DB\zip\201508060355196_initialcreate1.resx">
       <DependentUpon>201508060355196_initialcreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DB\zip\201508120158358_initialcreate2.resx">
+      <DependentUpon>201508120158358_initialcreate2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

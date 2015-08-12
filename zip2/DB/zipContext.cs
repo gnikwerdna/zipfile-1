@@ -11,5 +11,7 @@ namespace zip2.DB
     {
         public DbSet<Person> Persons { get; set; }
         public DbSet<File> Files { get; set; }
+        public DbSet<Audit> AuditRecords { get; set; }
+
     }
 }
