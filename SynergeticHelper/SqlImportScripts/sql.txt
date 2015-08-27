@@ -1,0 +1,30 @@
+﻿SELECT  
+      s.[StaffPreferredName] fname
+      ,s.[StaffSurname] as lname
+       ,s.[StaffID] as SynergeticId
+     ,case when lower(Right(s.[StaffOccupEmail],charindex('@',[StaffOccupEmail])-1)) ='@korowa.vic.edu.au' then
+      lower(left(s.[StaffOccupEmail],charindex('@',[StaffOccupEmail])-1)) 
+	  else
+	  lower(left(PreferredFormal,1) +''+ StaffSurname)
+	
+	  
+	  
+	  end as networklogin
+
+
+
+	--  ,c.networklogin
+
+
+
+
+    --  ,lower(s.[StaffOccupEmail])as[StaffOccupEmail]
+    , s.[StaffDepartment]
+  FROM [SynergyOne].[dbo].[vStaff] s join 
+[dbo].[Community] c on StaffID = c.id
+  where LeavingDate is null
+  and len(SchoolStaffCode) >1 
+  and len(staffOccupEmail) >1
+  and StaffDepartment not in('SPO','COM','ROW','')
+  
+  order by StaffSurname

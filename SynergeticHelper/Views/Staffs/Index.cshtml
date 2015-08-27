@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SynergeticHelper.Models.Staff>
+
+@{
+    ViewBag.Title = "Active Staff Listing";
+}
+
+<h2>Active Staff Listing</h2>
+
+<p>
+ 
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetworkLogin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SynergeticId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetworkLogin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SynergeticId)
+        </td>
+        <td>
+            @Html.ActionLink("Transfer Permissions", "UpdatePermissions", new { id = item.staffId })
+          
+        </td>
+    </tr>
+}
+
+</table>

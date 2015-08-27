@@ -1,0 +1,9 @@
+﻿Enable-Migrations -ContextTypeName SynergeticHelper.Models.ApplicationDbContext -MigrationsDirectory DB\applicationdbcontext
+Enable-Migrations -ContextTypeName SynergeticHelper.DB.SynHelpContext -MigrationsDirectory DB\synhelpcontext
+
+add-migration -ConfigurationTypeName SynergeticHelper.DB.applicationdbcontext.Configuration "initialcreate"
+add-migration -ConfigurationTypeName SynergeticHelper.DB.synhelpcontext.Configuration "initialcreate"
+
+update-database -ConfigurationTypeName SynergeticHelper.DB.applicationdbcontext.Configuration
+update-database -ConfigurationTypeName SynergeticHelper.DB.synhelpcontext.Configuration -verbose
+
